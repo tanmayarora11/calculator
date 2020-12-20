@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        body{
+            margin:0;
+            background: linear-gradient(rgb(200, 200, 20),rgb(20,220,220)); 
+        }
+        .container{
+            text-align: center;
+            border:4px double;
+            width:500px;
+            height:500px;
+            border-radius: 100%;
+            margin:10% auto;
+            background: linear-gradient(rgb(119, 206, 119),rgb(100, 200, 153));
+            padding-bottom:20px;
+            box-shadow:6px 10px 10px rgba(20, 159, 221,0.6); 
+        }
+        button{
+            background-color: rgb(29, 179, 206);
+            border-radius: 10px;
+            border:2px solid;
+            padding:5px;
+            font-size: 20px;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        input{
+            width:33%;
+            font-size: 20px;
+            margin:10px 0;
+            height:30px;
+            border-radius:30px;
+            border:2px solid;
+            background:linear-gradient(#3af89f,#89e489) ;
+        }
+        h1{
+            text-align: center;
+            font-size:45px;
+            text-decoration: underline;
+            margin:10%;
+        }
+        h4{
+            border:3px solid;
+            width:70%;
+            margin:80px auto 40px;
+            font-size: 40px;
+            background-color: rgb(247, 247, 122);
+            border-radius: 40px;
+        }
+        ::placeholder{
+            color:#000;
+        }
+        ::-ms-input-placeholder{
+            color: #000;
+        }
+        .btn-container{
+            margin:10px;
+            display:flex;
+            justify-content: space-between;
+            padding:20px 60px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Calculator</h1>
+    <h4 id="res">result</h4>
+    <input type="number" placeholder="first number" id="fno">
+    <input type="number" placeholder="second number" id="sno">
+    <div class="btn-container">
+        <button onclick="sum()">add</button>
+        <button onclick="sub()">subtract</button>
+        <button onclick="mul()">multiply</button>
+        <button onclick="div()">divide</button>
+    </div> 
+</div> 
+</body>
+<script>
+    function sum(){
+        var fno = document.getElementById('fno').value; 
+        var sno = document.getElementById('sno').value;
+        var add = document.getElementById('res'); 
+        add.innerHTML = Number(fno)+Number(sno);
+    }
+    function sub(){
+        var fno = document.getElementById('fno').value; 
+        var sno = document.getElementById('sno').value;
+        var minus = document.getElementById('res'); 
+        minus.innerHTML = Number(fno)-Number(sno);
+    }
+    function mul(){
+        var fno = document.getElementById('fno').value; 
+        var sno = document.getElementById('sno').value;
+        var pro = document.getElementById('res'); 
+        pro.innerHTML = Number(fno)*Number(sno);  
+    }
+    function div(){
+        var fno = document.getElementById('fno').value; 
+        var sno = document.getElementById('sno').value; 
+        var division = document.getElementById('res');
+        if(Number(sno)!=0)
+        {
+            if(Number(fno)%Number(sno) != 0)
+            division.innerHTML = (Number(fno)/Number(sno)).toFixed(2);
+            else
+            division.innerHTML = (Number(fno)/Number(sno))
+        }
+        else
+        division.innerHTML = "Can't divide";
+    }
+    
+</script>
+</html>
