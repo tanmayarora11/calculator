@@ -8,29 +8,33 @@
         body{
             margin:0;
             background: linear-gradient(rgb(200, 200, 20),rgb(20,220,220)); 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
         .container{
             text-align: center;
             border:4px double;
             width:500px;
             height:500px;
-            border-radius: 100%;
+            border-radius: 2%;
             margin:10% auto;
             background: linear-gradient(rgb(119, 206, 119),rgb(100, 200, 153));
             padding-bottom:20px;
             box-shadow:6px 10px 10px rgba(20, 159, 221,0.6); 
         }
-        button{
+        input[type="button"]{
             background-color: rgb(29, 179, 206);
             border-radius: 10px;
             border:2px solid;
             padding:5px;
+            margin:5px;
             font-size: 20px;
+            flex-basis:40px;
         }
-        button:hover{
+        .btn:hover{
             cursor: pointer;
         }
-        input{
+        input[type="number"]{
             width:33%;
             font-size: 20px;
             margin:10px 0;
@@ -43,12 +47,12 @@
             text-align: center;
             font-size:45px;
             text-decoration: underline;
-            margin:10%;
+            margin:5%;
         }
         h4{
             border:3px solid;
             width:70%;
-            margin:80px auto 40px;
+            margin:40px auto;
             font-size: 40px;
             background-color: rgb(247, 247, 122);
             border-radius: 40px;
@@ -59,10 +63,17 @@
         ::-ms-input-placeholder{
             color: #000;
         }
+        #inp{
+            display:none;
+        }
         .btn-container{
-            margin:10px;
+            margin:0 auto;
             display:flex;
-            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap:wrap;
+            width:200px;
+            height:200px;
+            justify-content: center;
             padding:20px 60px;
         }
     </style>
@@ -71,17 +82,34 @@
 <div class="container">
     <h1>Calculator</h1>
     <h4 id="res">result</h4>
-    <input type="number" placeholder="first number" id="fno">
-    <input type="number" placeholder="second number" id="sno">
+    <input type="number" onclick="inp(1)" placeholder="first number" id="fno">
+    <input type="number" onclick="inp(2)" placeholder="second number" id="sno">
+    <input type="number" id="inp">
     <div class="btn-container">
-        <button onclick="sum()">add</button>
-        <button onclick="sub()">subtract</button>
-        <button onclick="mul()">multiply</button>
-        <button onclick="div()">divide</button>
+        <input type="button" class="btn" onclick="val(1)" value="1">
+        <input type="button" class="btn" onclick="val(2)" value="2">
+        <input type="button" class="btn" onclick="val(3)" value="3">
+        <input type="button" class="btn" onclick="sum()" value="+">
+        <input type="button" class="btn" onclick="val(4)" value="4">
+        <input type="button" class="btn" onclick="val(5)" value="5">
+        <input type="button" class="btn" onclick="val(6)" value="6">
+        <input type="button" class="btn" onclick="sub()" value="-">
+        <input type="button" class="btn" onclick="val(7)" value="7">
+        <input type="button" class="btn" onclick="val(8)" value="8">
+        <input type="button" class="btn" onclick="val(9)" value="9">
+        <input type="button" class="btn" onclick="mul()" value="x">
+        <input type="button" class="btn" onclick="">
+        <input type="button" class="btn" onclick="val(0)" value="0">
+        <input type="button" class="btn" onclick=""> 
+        <input type="button" class="btn" onclick="div()" value="/">
     </div> 
 </div> 
 </body>
 <script>
+    function inp(i)
+    {
+        document.getElementById('inp').value = i;
+    }
     function sum(){
         var fno = document.getElementById('fno').value; 
         var sno = document.getElementById('sno').value;
@@ -113,6 +141,18 @@
         }
         else
         division.innerHTML = "Can't divide";
+    }
+    function val(no)
+    {
+        var i = document.getElementById('inp').value;
+        if(i==1)
+        {
+            document.getElementById('fno').value = String(document.getElementById('fno').value)+String(no);
+        }
+        else
+        {
+            document.getElementById('sno').value = String(document.getElementById('sno').value)+String(no);
+        }
     }
     
 </script>
