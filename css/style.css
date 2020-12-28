@@ -1,0 +1,71 @@
+body{
+    margin:0;
+    background: linear-gradient(rgb(200, 200, 20),rgb(20,220,220)); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.container{
+    text-align: center;
+    border:4px double;
+    width:500px;
+    height:500px;
+    border-radius: 2%;
+    margin:10% auto;
+    background: linear-gradient(rgb(119, 206, 119),rgb(100, 200, 153));
+    padding-bottom:20px;
+    box-shadow:6px 10px 10px rgba(20, 159, 221,0.6); 
+}
+input[type="button"]{
+    background-color: rgb(29, 179, 206);
+    border-radius: 10px;
+    border:2px solid;
+    padding:5px;
+    margin:5px;
+    font-size: 20px;
+    flex-basis:40px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+input[type="number"]{
+    width:33%;
+    font-size: 20px;
+    margin:10px 0;
+    height:30px;
+    border-radius:30px;
+    border:2px solid;
+    background:linear-gradient(#3af89f,#89e489) ;
+}
+h1{
+    text-align: center;
+    font-size:45px;
+    text-decoration: underline;
+    margin:5%;
+}
+h4{
+    border:3px solid;
+    width:70%;
+    margin:40px auto;
+    font-size: 40px;
+    background-color: rgb(247, 247, 122);
+    border-radius: 40px;
+}
+::placeholder{
+    color:#000;
+}
+::-ms-input-placeholder{
+    color: #000;
+}
+#inp{
+    display:none;
+}
+.btn-container{
+    margin:0 auto;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width:200px;
+    height:200px;
+    justify-content: center;
+    padding:20px 60px;
+}
