@@ -9,20 +9,36 @@ body{
     border:4px double;
     width:500px;
     height:500px;
-    border-radius: 2%;
-    margin:10% auto;
-    background: linear-gradient(rgb(119, 206, 119),rgb(100, 200, 153));
+    border-radius: 20%;
+    margin:6% auto;
+    background: radial-gradient(rgba(27, 233, 27, 0.76),rgb(100, 200, 153));
     padding-bottom:20px;
     box-shadow:6px 10px 10px rgba(20, 159, 221,0.6); 
 }
+.btn-container{
+    margin:0 auto;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width:250px;
+    height:200px;
+    justify-content: center;
+    padding:20px 20px;
+}
 input[type="button"]{
     background-color: rgb(29, 179, 206);
+    background: linear-gradient(to left,rgb(99, 207, 226),rgb(56, 82, 224));
     border-radius: 10px;
     border:2px solid;
     padding:5px;
     margin:5px;
     font-size: 20px;
     flex-basis:40px;
+}
+input[type="button"].arth{
+   flex-basis:80px;
+   background-color: rgb(247, 247, 122);
+   background: linear-gradient(to right,rgb(224, 136, 205),rgb(224, 123, 56));
 }
 .btn:hover{
     cursor: pointer;
@@ -48,6 +64,7 @@ h4{
     margin:40px auto;
     font-size: 40px;
     background-color: rgb(247, 247, 122);
+    background: radial-gradient(rgb(247, 247, 122) ,rgb(255, 233, 39));
     border-radius: 40px;
 }
 ::placeholder{
@@ -58,14 +75,4 @@ h4{
 }
 #inp{
     display:none;
-}
-.btn-container{
-    margin:0 auto;
-    display:flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    width:200px;
-    height:200px;
-    justify-content: center;
-    padding:20px 60px;
 }
